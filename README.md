@@ -7,6 +7,7 @@ Needs `stow`
 ```
 cd ~
 git clone https://github.com/ruiz-pablo/.dotfiles.git
-stow .dotfiles/ -t .config
+cd .dotfiles
+stow .
 ```
 
