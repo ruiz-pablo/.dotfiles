@@ -1,0 +1,17 @@
+########################################
+#        Personal Configuration        #
+########################################
+
+# Use vim as default editor
+export EDITOR='nvim'
+
+# Add local bin executables
+export PATH+=":~/.local/bin"
+
+RED="\e[31m"
+GREEN="\e[32m"
+BLUE="\e[34m"
+RESET="\e[0m"
+LIGHT_YELLOW="\e[93m"
+#PS1="\[$GREEN\u@\h $LIGHT_YELLOW\w\n$RESET> \]"
+
