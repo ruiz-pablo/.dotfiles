@@ -1,0 +1,15 @@
+[x] Scripts
+[x] - alacritty-squeme
+[x] - animations
+[x] - cpucontrol
+[x] - nvidia-run
+
+[x] Bash config
+[ ] Convert vim config to Neovim
+[x] Vim config
+[x] Tmux config
+[x] Alacritty config
+
+[ ] Firefox
+
+.profile -> .bashrc -> .bash_aliases

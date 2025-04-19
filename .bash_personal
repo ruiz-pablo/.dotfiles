@@ -3,10 +3,16 @@
 ########################################
 
 # Use vim as default editor
-export EDITOR='nvim'
+export EDITOR='vim'
 
 # Add local bin executables
 export PATH+=":~/.local/bin"
+
+# Set gnome desktop key repeat rate and delay
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 35;
+gsettings set org.gnome.desktop.peripherals.keyboard delay 255;
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 30;
+gsettings set org.gnome.desktop.peripherals.keyboard delay 250;
 
 RED="\e[31m"
 GREEN="\e[32m"
