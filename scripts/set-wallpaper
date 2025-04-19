@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+wallpaper_folder="$HOME/fs/imagenes/fondos"
+
+selected=$(find $wallpaper_folder -type f -printf '%f\n' | fzf --cycle)
+
+if [ -n "$selected" ]; then
+    gsettings set org.gnome.desktop.background picture-uri-dark "file://$wallpaper_folder/$selected"
+    gsettings set org.gnome.desktop.background picture-uri "file://$wallpaper_folder/$selected"
+fi

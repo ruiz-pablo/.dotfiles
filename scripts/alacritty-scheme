@@ -1,0 +1,72 @@
+#!/bin/env bash
+
+function show-help() {
+    echo "USAGE: "
+    echo "$(basename $0) [dark] | [light]"
+    echo "'dark' for dark mode (default)"
+    echo "'light' for light mode"
+}
+
+if [[ $1 == "--help" || $1 == "-h" ]]; then
+    show-help
+    exit 1
+fi
+
+if [[ -z $1 || $1 == "dark" ]]; then
+    alacritty msg config colors="
+      primary:
+        background: '#000000'
+        foreground: '#ffffff'
+        dim_background: '#000000'
+        dim_foreground: '#ffffff'
+
+      normal:
+        black:   '#111134'
+        red:     '#d61d52'
+        green:   '#48a842'
+        yellow:  '#e1a51c'
+        blue:    '#5556d3'
+        magenta: '#8650d3'
+        cyan:    '#52afb7'
+        white:   '#dddddd'
+
+      bright:
+        black:   '#484867'
+        red:     '#e15877'
+        green:   '#71ab3a'
+        yellow:  '#c6a642'
+        blue:    '#6d6dc9'
+        magenta: '#956ad3'
+        cyan:    '#6ab6bd'
+        white:   '#e8e6e9'
+    "
+
+elif [[ $1 == "light" ]]; then
+    alacritty msg config colors="
+    primary:
+        background: '#fbf1c7'
+        foreground: '#3c3836'
+
+    normal:
+        black:   '#fbf1c7'
+        red:     '#cc241d'
+        green:   '#98971a'
+        yellow:  '#d79921'
+        blue:    '#458588'
+        magenta: '#b16286'
+        cyan:    '#689d6a'
+        white:   '#7c6f64'
+
+    bright:
+        black:   '#928374'
+        red:     '#9d0006'
+        green:   '#79740e'
+        yellow:  '#b57614'
+        blue:    '#076678'
+        magenta: '#8f3f71'
+        cyan:    '#427b58'
+        white:   '#3c3836'
+        "
+else
+    show-help
+fi

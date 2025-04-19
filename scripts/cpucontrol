@@ -1,0 +1,124 @@
+#!/bin/bash
+
+function cpu_status()
+{
+    cpu=$1
+
+    if [ ! -e $cpu/online ]
+    then
+        return 2
+    fi
+
+    if [[ $(cat $cpu/online) == "1" ]]
+    then
+        return 1
+    fi
+
+    return 0
+}
+
+function print_cpu()
+{
+    cpu=$1
+    cpu_status $cpu
+    case $? in 
+        0)
+            status=$RED"Disabled"$NC
+            ;;
+        1)
+            status=$GREEN"Enabled"$NC
+            ;;
+        2)
+            status=$GREEN"Enabled (Cannot change)"$NC
+            ;;
+    esac
+
+    echo -e $(basename $cpu) : $status
+}
+
+function toggle_cpu()
+{
+    cpu=$1
+    cpu_status $cpu
+    case $? in 
+        0)
+            # Enable cpu
+            echo "1" > $cpu/online
+            ;;
+        1)
+            # Disable cpu
+            echo "0" > $cpu/online
+            ;;
+        2)
+            # Error
+            echo "Cannot toggle cpu"
+            ;;
+    esac
+}
+
+# Check root permisions
+if [ "$EUID" -ne 0 ]
+  then echo "'cpucontrol' must be run with sudo"
+  exit
+fi
+
+
+# Colors
+GREEN="\033[1;32m"
+RED="\033[1;31m"
+NC='\033[0m' # No Color
+
+path="/sys/devices/system/cpu"
+cpus=$path/cpu?
+
+while true
+do
+    clear
+    echo "###############"
+    echo "# CPU-control #"
+    echo "###############"
+    echo 
+
+    for cpu in $cpus
+    do
+        print_cpu $cpu
+    done
+
+    echo "(<cpu number>, 'all', 'none')"
+    read -p "> " n
+
+    # Enable all cpus
+    if [[ $n == "all" ]] 
+    then
+        for cpu in $cpus
+        do
+            cpu_status $cpu
+            if [[ $? == 0 ]] 
+            then
+                toggle_cpu $cpu
+            fi
+        done
+    fi
+
+    # Disable all cpus
+    if [[ $n == "none" ]] 
+    then
+        for cpu in $cpus
+        do
+            cpu_status $cpu
+            if [[ $? == 1 ]] 
+            then
+                toggle_cpu $cpu
+            fi
+        done
+    fi
+
+    # Find cpu
+    for cpu in $cpus
+    do
+        if [[ "cpu"$n == $(basename $cpu) ]] 
+        then
+            toggle_cpu $cpu
+        fi
+    done
+done

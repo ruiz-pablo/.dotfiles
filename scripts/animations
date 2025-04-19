@@ -1,0 +1,12 @@
+#!/bin/bash
+
+state=$(gsettings get org.gnome.desktop.interface enable-animations)
+
+if [[ $state == true ]]
+then
+	gsettings set org.gnome.desktop.interface enable-animations false
+	echo Animations were disabled
+else
+	gsettings set org.gnome.desktop.interface enable-animations true
+	echo Animations were enabled
+fi

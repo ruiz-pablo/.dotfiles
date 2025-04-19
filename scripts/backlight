@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo $# 
+if [ $# -eq 0 ]
+then
+	brightnessctl set 50%
+	echo SET BACKLIGHT TO 50%
+	exit
+fi
+
+case $1 in
+	up)
+		brightnessctl set 5%+
+		;;
+	down)
+		brightnessctl set 5%-
+		;;
+	set)
+		brightnessctl set $2%
+esac
