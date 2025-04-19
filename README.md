@@ -8,6 +8,6 @@ Needs `stow`
 cd ~
 git clone https://github.com/ruiz-pablo/.dotfiles.git
 cd .dotfiles
-stow .
+stow --no-folding .
 ```
 
