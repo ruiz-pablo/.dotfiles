@@ -17,5 +17,6 @@ EOF
 
 if [ -n "$selected" ]; then
     opacity=$(bc -l <<< "${selected%\%*} / 100")
-    alacritty msg config -w -1 "window.opacity=$opacity"
+    echo OPacity: $opacity
+    alacritty msg config -w -1 "window.opacity=$(printf '%.2f' $opacity)"
 fi
