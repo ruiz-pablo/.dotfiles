@@ -1,7 +1,7 @@
 # Set PATH variable
 [ -d "$HOME/bin" ] && PATH="$HOME/bin:$PATH"                       # Add bin
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"         # Add local bin
-[ -d "$HOME/.local/scripts" ] && PATH="$HOME/.local/scripts:$PATH" # Add scripts
+[ -d "$HOME/scripts" ] && PATH="$HOME/scripts:$PATH" # Add scripts
 
 # Enviroment variables
 export DOTNET_CLI_TELEMETRY_OPTOUT=1 # Disable dotnet telemetry
