@@ -54,3 +54,6 @@ gsettings set org.gnome.desktop.peripherals.keyboard delay 250;
 
 # Source .bash_profile file
 [ -f ~/.bash_profile ] && source ~/.bash_profile
+
+# Source system-wide bashrc
+[ -f /etc/bashrc ] && source /etc/bashrc

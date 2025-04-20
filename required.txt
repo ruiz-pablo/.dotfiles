@@ -1,0 +1,26 @@
+# Tops
+htop
+iotop
+iftop
+
+# Tools
+alacritty
+stow
+wget
+curl
+parallel
+fzf
+
+# Programming
+tmux
+git
+vim
+make
+java-latest-openjdk
+
+# Programs
+mpv
+yt-dlp
+ufw
+
+dnf install htop iotop iftop alacritty stow wget curl parallel fzf tmux git vim make java-latest-openjdk mpv yt-dlp ufw
