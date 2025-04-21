@@ -33,4 +33,12 @@ deja-dup
 gnome-tweaks
 gnome-extensions-app
 
-dnf install htop iotop iftop alacritty stow wget curl parallel fzf tmux git vim make java-latest-openjdk mpv yt-dlp ufw
+# Flatpak
+flatpak install flathub com.github.tchx84.Flatseal
+flatpak install flathub io.github.flattool.Warehouse
+flatpak install flathub org.eclipse.Java
+flatpak install flathub com.visualstudio.code
+flatpak install flathub com.wps.Office
+flatpak install flathub com.jetbrains.IntelliJ-IDEA-Community
+flatpak install flathub io.gitlab.theevilskeleton.Upscaler
+flatpak install flathub sh.ppy.osu
