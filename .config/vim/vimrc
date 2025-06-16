@@ -34,10 +34,6 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
-" Do not invert colors in visual mode
-highlight Visual cterm=reverse ctermbg=NONE
-highlight Search cterm=reverse ctermbg=NONE
-
 " Remaps
 let mapleader = ' '
 nnoremap <leader>n :cn<CR>
