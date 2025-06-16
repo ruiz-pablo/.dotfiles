@@ -9,6 +9,7 @@ alacritty
 stow
 wget
 curl
+trash-cli
 parallel
 fzf
 speedtest-cli
