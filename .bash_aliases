@@ -32,6 +32,7 @@ alias programacion_db='mysqlsh -h 192.168.33.214 -u sanjose -pSQL_2710_jsp --dat
 
 # Programs
 alias yt-dlp_best='yt-dlp -f "bv+ba/b"'
+alias flatpak-run='flatpak list --app --columns=application | fzf | (xargs flatpak run &> /dev/null &)'
 alias magick='convert'
 alias c='clear'
 alias lf='lfcd'
