@@ -14,6 +14,13 @@ shopt -s histappend   # Append to history command, do not overwrite
 shopt -s checkwinsize # Resize terminal after every command
 shopt -s globstar     # Enable ** pattern 
 
+# Enable bash completion in debian
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
+elif [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x $(command -v dircolors) ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
