@@ -49,6 +49,9 @@ eog_alias () {
     eog "$@"
 }
 
-fzf() {
-    /bin/env fzf --cycle --border=rounded --margin=20% "$@"
+fzf_alias() {
+    command fzf --cycle --border=rounded --margin=20% "$@"
 }
+
+# Export functions
+export -f fzf_alias

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+query=$(echo "" | fzf --tmux --cycle --height=1 --no-multi --header="Enter name of the package to search" --print-query)
+echo "Searching..."
+selected=$(flatpak search --columns=name,application "$query" | fzf --tmux --cycle --with-nth 1,3 --accept-nth 2)
+
+if [ ! -n "$selected" ]; then
+    echo "No package selected"
+    exit 1
+fi
+
+if [[ "$selected" == "No found" ]]; then
+    echo "No packages where found"
+    exit 1
+fi
+
+echo "Installing..."
+flatpak install "$selected"
