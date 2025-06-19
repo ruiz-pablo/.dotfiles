@@ -2,7 +2,7 @@
 
 query=$(echo "" | fzf --tmux --cycle --height=1 --no-multi --header="Enter name of the package to search" --print-query)
 echo "Searching..."
-selected=$(flatpak search --columns=name,application "$query" | fzf --tmux --cycle --with-nth 1,3 --accept-nth 2)
+selected=$(flatpak search --columns=name,application "$query" | fzf --tmux --cycle -d '\t' --with-nth 1 --accept-nth 2)
 
 if [ ! -n "$selected" ]; then
     echo "No package selected"
