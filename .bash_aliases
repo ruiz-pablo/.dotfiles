@@ -38,7 +38,6 @@ alias c='clear'
 alias lf='lfcd'
 alias eye='eog_alias'
 alias fzf='fzf_alias'
-alias vim='gvim -v'
 
 # Functions
 lfcd () {
