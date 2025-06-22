@@ -64,3 +64,12 @@ gsettings set org.gnome.desktop.peripherals.keyboard delay 250;
 
 # Source system-wide bashrc
 [ -f /etc/bashrc ] && source /etc/bashrc
+
+# Attach to tmux session if it exits, otherwise start new session
+if command -v tmux &> /dev/null; then
+    if [ ! "$TMUX" ]; then
+        tmux attach || tmux
+    fi
+else
+    echo "WARNING: tmux is not installed"
+fi
