@@ -19,4 +19,14 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+# Run keychain to manage ssh-agent
+if command -v keychain &> /dev/null; then
+    eval $(keychain --eval --quiet \
+        localserver                \
+        github                     \
+    )
+else
+    echo "WARNING: keychain is not installed"
+fi
+
 if [ -e /home/user/.nix-profile/etc/profile.d/nix.sh ]; then . /home/user/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
