@@ -41,7 +41,7 @@ alias fzf='fzf_alias'
 
 # Functions
 lfcd () {
-    cd "$(command ~/.local/bin/lf -print-last-dir "$@")"
+    cd "$(command lf -print-last-dir "$@")"
 }
 
 eog_alias () {
