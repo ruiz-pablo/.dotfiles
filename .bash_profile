@@ -12,7 +12,7 @@ export LC_TIME=es_ES.UTF-8  # Use monday as first day of the week
 
 # Enviroment variables
 export DOTNET_CLI_TELEMETRY_OPTOUT=1 # Disable dotnet telemetry
-export EDITOR='vim' # Set default editor
+export EDITOR='nvim' # Set default editor
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
