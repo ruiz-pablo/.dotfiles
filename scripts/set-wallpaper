@@ -3,9 +3,9 @@
 wallpaper_folder="$HOME/fs/imagenes/fondos"
 
 if [[ $1 == "--random" || $1 == "-r" ]]; then
-    selected=$(find "$wallpaper_folder" ~/fs/imagenes/fondos/ -type f | shuf -n 1)
+    selected=$(find "$wallpaper_folder" -type f | shuf -n 1)
 else
-    selected=$(find "$wallpaper_folder" ~/fs/imagenes/fondos/ -type f | fzf --cycle --delimiter / --with-nth -1)
+    selected=$(find "$wallpaper_folder" -type f | fzf --cycle --delimiter / --with-nth -1)
 fi
 
 if [ -n "$selected" ]; then
