@@ -59,6 +59,7 @@ vim.keymap.set('n', '<leader>l', toggle_quickfix)
 
 vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('v', '<leader>d', '"_d')
+vim.keymap.set('n', 'L', function() vim.diagnostic.open_float() end)
 
 -- Remaps for Netrw
 vim.api.nvim_create_autocmd('FileType', {
