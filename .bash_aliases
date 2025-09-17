@@ -11,6 +11,7 @@ alias videos='cd ~/Videos'
 alias fs='cd ~/fs'
 alias documentos='cd ~/fs/documentos'
 alias fp='cd ~/fs/fp'
+alias fp2='cd ~/fs/fp2'
 alias imagenes='cd ~/fs/imagenes'
 alias instituto='cd ~/fs/instituto'
 alias libros='cd ~/fs/libros'
@@ -20,6 +21,7 @@ alias torrents='cd ~/fs/torrents'
 alias universidad='cd ~/fs/universidad'
 alias videos='cd ~/fs/videos'
 alias memes='cd ~/fs/videos/memes/'
+alias horario='open ~/fs/fp2/horario.png'
 
 # ssh
 alias localserver='ssh -p 40000 localserver@localserver785.mooo.com'
@@ -38,6 +40,7 @@ alias c='clear'
 alias lf='lfcd'
 alias eye='eog_alias'
 alias fzf='fzf_alias'
+alias open='xdg-open'
 
 # Functions
 lfcd () {
