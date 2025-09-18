@@ -61,6 +61,8 @@ vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('v', '<leader>d', '"_d')
 vim.keymap.set('n', 'L', function() vim.diagnostic.open_float() end)
 
+vim.api.nvim_create_user_command("Todo", ":e ~/todo.md", {})
+
 -- Remaps for Netrw
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'netrw',
