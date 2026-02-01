@@ -505,6 +505,19 @@ require('lazy').setup(
                         end,
                     },
                 }
+
+                -- This fixes gopls not being able to detect changes on go.mod and go.sum files
+                vim.lsp.config('*', {
+                    capabilities = {
+                        workspace = {
+                            didChangeWatchedFiles = {
+                                -- Enable file watching. Will notify lsp clients when a file in the workspace is changed
+                                -- See https://github.com/LazyVim/LazyVim/discussions/942
+                                dynamicRegistration = true,
+                            },
+                        },
+                    },
+                })
             end,
         },
 
