@@ -1,0 +1,17 @@
+// Windows: %APPDATA%\Code\User\settings.json
+// Linux: $HOME/.config/Code/User/settings.json
+{
+    "explorer.confirmDelete": false,
+    "security.workspace.trust.enabled": false,
+    "editor.minimap.enabled": false,
+    "vim.leader": " ",
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "y"],
+            "after": ["\"", "+", "y"]
+        }
+    ],
+    "dart.flutterSdkPath": "/home/user/Downloads/flutter/flutter",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.editor.empty.hint": "hidden",
+}
