@@ -518,6 +518,12 @@ require('lazy').setup(
                         },
                     },
                 })
+
+                -- Add lombok support to jdtls. Make sure the jar file has been downloaded
+                vim.fn.setenv(
+                    "JDTLS_JVM_ARGS",
+                    "-javaagent:" .. vim.env.HOME .. "/.local/share/java/lombok.jar"
+                )
             end,
         },
 
