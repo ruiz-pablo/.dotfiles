@@ -22,7 +22,7 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 # enable color support of ls and also add handy aliases
-if [ -x $(command -v dircolors) ]; then
+if [ -x "$(command -v dircolors)" ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
@@ -39,8 +39,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Replace rm with trash-cli (if avaliable)
-if [ -x $(command -v trash) ]
-then
+if [ -x "$(command -v trash)" ]; then
     alias rm='trash'
     alias rm_perma='/bin/rm'
 else
@@ -51,10 +50,12 @@ fi
 export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\]\\n> "
 
 # Set gnome desktop key repeat rate and delay
-gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 35;
-gsettings set org.gnome.desktop.peripherals.keyboard delay 255;
-gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 30;
-gsettings set org.gnome.desktop.peripherals.keyboard delay 250;
+if [ -x "$(command -v gsettings)" ]; then
+    gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 35;
+    gsettings set org.gnome.desktop.peripherals.keyboard delay 255;
+    gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 30;
+    gsettings set org.gnome.desktop.peripherals.keyboard delay 250;
+fi
 
 # Source .bash_aliases file
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
